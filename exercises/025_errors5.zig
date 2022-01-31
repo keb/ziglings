@@ -26,7 +26,9 @@ fn addFive(n: u32) MyNumberError!u32 {
     // This function needs to return any error which might come back from detect().
     // Please use a "try" statement rather than a "catch".
     //
-    var x = detect(n);
+    std.debug.print("about to detect...", .{});
+    var x = try detect(n);
+    std.debug.print("this will never print for an error...", .{});
 
     return x + 5;
 }
